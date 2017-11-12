@@ -26,6 +26,8 @@ public class SecureRandomNumberExample {
     /**
      * An example of creating DRBG suitable for creation of initialization
      * vectors (IVs) or other similar random data (nonces).
+     * <p>
+     * Example 1
      *
      * @return a secure random suitable for IVs
      */
@@ -57,6 +59,8 @@ public class SecureRandomNumberExample {
 
     /**
      * An example of creating a FIPS approved {@code SecureRandom} for keys.
+     * <p>
+     * Example 2
      *
      * @return a secure random suitable for key
      */
@@ -92,6 +96,8 @@ public class SecureRandomNumberExample {
      * SecureRandom()” the API executes a call to
      * CryptoServicesRegistrar.getSecureRandom() which will
      * throw an exception if a default has not been provided.
+     * <p>
+     * Example 3
      */
     public static void setDefaultDrbg() {
         EntropySourceProvider entSource =

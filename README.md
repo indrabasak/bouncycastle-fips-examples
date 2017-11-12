@@ -72,9 +72,21 @@ Examples here relate to Bouncy Castle implementation of
 
 These examples can found in [The Bouncy Castle FIPS Java API in 100 Examples](https://www.bouncycastle.org/fips-java/BCFipsIn100.pdf).
 
+### Random Numbers
+Secured random is very important in cryptography as random values are used in
+ key and IV generation.
+ 
 - `SecureRandomNumberExample.java` contains examples of generating secure
-random numbers. Secured random is very important in cryptography as random 
-values are used in key and IV generation.
+random numbers. (_Example 1, 2, and 3_)
+
+### Symmetric Key
+BC FIPS API offers both approved mode symmetric ciphers, AES
+and TripleDES, and also a number of other symmetric ciphers such as ARC4, 
+Blowfish, Camellia, CAST5, DES, GOST28147, IDEA, RC2, SEED, Serpent, 
+SHACAL2, and Twofish.
+
+- `KeyCreationExample.java` contains examples related to creating symmetric 
+keys. (_Example 4 and 5_)
 
 ## Build
 Execute the following command from the parent directory:
