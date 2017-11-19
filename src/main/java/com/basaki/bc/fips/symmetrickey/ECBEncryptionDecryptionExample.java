@@ -13,6 +13,7 @@ import javax.crypto.SecretKey;
  * @author Indra Basak
  * @since 11/12/2017
  */
+@SuppressWarnings({"squid:S1118"})
 public class ECBEncryptionDecryptionExample {
 
     /**

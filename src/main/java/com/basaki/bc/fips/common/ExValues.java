@@ -5,6 +5,7 @@ import javax.crypto.spec.SecretKeySpec;
 import org.bouncycastle.util.Strings;
 import org.bouncycastle.util.encoders.Hex;
 
+@SuppressWarnings({"squid:S1118"})
 public class ExValues {
     public static final long THIRTY_DAYS = 1000L * 60 * 60 * 24 * 30;
     public static final SecretKey SampleAesKey =

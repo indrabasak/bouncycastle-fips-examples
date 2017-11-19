@@ -16,6 +16,7 @@ import javax.crypto.spec.IvParameterSpec;
  * @author Indra Basak
  * @since 11/18/2017
  */
+@SuppressWarnings({"squid:S1118"})
 public class CBCEncryptionDecryptionExample {
 
     /**
