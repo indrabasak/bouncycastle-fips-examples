@@ -1,7 +1,10 @@
 package com.basaki.bc.fips.symmetrickey;
 
 import java.security.GeneralSecurityException;
+import java.security.Security;
 import javax.crypto.SecretKey;
+import org.bouncycastle.jcajce.provider.BouncyCastleFipsProvider;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
@@ -15,6 +18,11 @@ import static org.junit.Assert.assertNotNull;
  * @since 11/18/2017
  */
 public class CFBEncryptionDecryptionExampleTest {
+
+    @Before
+    public void setUp() {
+        Security.addProvider(new BouncyCastleFipsProvider());
+    }
 
     @Test
     public void testCfbEncryptDecrypt() throws GeneralSecurityException {
