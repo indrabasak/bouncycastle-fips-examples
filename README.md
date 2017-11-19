@@ -88,6 +88,23 @@ SHACAL2, and Twofish.
 - `KeyCreationExample.java` contains examples related to creating symmetric 
 keys. (_Example 4 and 5_)
 
+- `ECBEncryptionDecryptionExample.java`  contains examples of encrypting and
+block cipher modes is unpadded. The input has to be aligned on the
+block boundaries of the cipher - in this case 128 bits.
+
+- `CBCEncryptionDecryptionExample.java` contains examples of encrypting and
+decrypting in CBC (Cipher Block Chaining) mode. Padding needs to be
+specified as the CBC mode is block aligned. CBC mode has an extra
+parameter, the initialization vector (IV), which is used with the mode to
+prevent any similarities in two plain texts from showing up in the
+encrypted results. Make sure the IV is reliably random or unique.
+
+- `CFBEncryptionDecryptionExample.java` contains examples of encrypting and
+decrypting in CFB (Cipher Feedback) mode. It is similar to CBC while
+using a streaming block mode. However, padding is no longer required
+as the cipher generates a stream of "noise" which is XOR'd with the data
+to be encrypted.
+
 ## Build
 Execute the following command from the parent directory:
 ```
