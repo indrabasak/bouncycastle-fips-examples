@@ -11,13 +11,13 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * {@code CTREncryptionDecryptionExampleTest} contains unit tests
- * related to {@code CTRModeEncryptionExample}.
+ * {@code CFBModeEncryptionExampleTest} contains unit tests
+ * related to {@code CFBModeEncryptionExample}.
  *
  * @author Indra Basak
  * @since 11/18/2017
  */
-public class CTREncryptionDecryptionExampleTest {
+public class CFBModeEncryptionExampleTest {
 
     @Before
     public void setUp() {
@@ -25,12 +25,12 @@ public class CTREncryptionDecryptionExampleTest {
     }
 
     @Test
-    public void testCtrEncryptDecrypt() throws GeneralSecurityException {
+    public void testCfbEncryptDecrypt() throws GeneralSecurityException {
         SecretKey key = KeyCreationExample.generateKey();
         byte[] plaintext = "Indra".getBytes();
 
         byte[][] ivCiphertext =
-                CTRModeEncryptionExample.ctrEncrypt(key,
+                CFBModeEncryptionExample.cfbEncrypt(key,
                         plaintext);
 
         byte[] iv = ivCiphertext[0];
@@ -39,7 +39,7 @@ public class CTREncryptionDecryptionExampleTest {
         assertNotNull(ciphertext);
 
         byte[] derivedPlainText =
-                CTRModeEncryptionExample.ctrDecrypt(key, iv,
+                CFBModeEncryptionExample.cfbDecrypt(key, iv,
                         ciphertext);
         assertNotNull(derivedPlainText);
         assertArrayEquals(plaintext, derivedPlainText);

@@ -5,19 +5,21 @@ import java.security.Security;
 import javax.crypto.SecretKey;
 import org.bouncycastle.jcajce.provider.BouncyCastleFipsProvider;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * {@code CFBEncryptionDecryptionExampleTest} contains unit tests
- * related to {@code CFBEncryptionDecryptionExample}.
+ * {@code CBCModeWithCTSEncryptionExampleTest} contains unit tests
+ * related to {@code CBCModeWithCTSEncryptionExample}.
  *
  * @author Indra Basak
- * @since 11/18/2017
+ * @since 11/19/2017
  */
-public class CFBEncryptionDecryptionExampleTest {
+@Ignore
+public class CBCModeWithCTSEncryptionExampleTest {
 
     @Before
     public void setUp() {
@@ -25,12 +27,12 @@ public class CFBEncryptionDecryptionExampleTest {
     }
 
     @Test
-    public void testCfbEncryptDecrypt() throws GeneralSecurityException {
+    public void testCbcEncryptDecrypt() throws GeneralSecurityException {
         SecretKey key = KeyCreationExample.generateKey();
         byte[] plaintext = "Indra".getBytes();
 
         byte[][] ivCiphertext =
-                CFBEncryptionDecryptionExample.cfbEncrypt(key,
+                CBCModeWithCTSEncryptionExample.ctsEncrypt(key,
                         plaintext);
 
         byte[] iv = ivCiphertext[0];
@@ -39,7 +41,7 @@ public class CFBEncryptionDecryptionExampleTest {
         assertNotNull(ciphertext);
 
         byte[] derivedPlainText =
-                CFBEncryptionDecryptionExample.cfbDecrypt(key, iv,
+                CBCModeWithCTSEncryptionExample.ctsDecrypt(key, iv,
                         ciphertext);
         assertNotNull(derivedPlainText);
         assertArrayEquals(plaintext, derivedPlainText);

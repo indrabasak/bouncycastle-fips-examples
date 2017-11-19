@@ -5,7 +5,7 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 
 /**
- * {@code ECBEncryptionDecryptionExample} contains examples of encrypting and
+ * {@code ECBModeEncryptionExample} contains examples of encrypting and
  * decrypting in Electronic Code Book (ECB) mode. ECB like many other
  * block cipher modes is unpadded. The input has to be aligned on the
  * block boundaries of the cipher - in this case 128 bits.
@@ -14,7 +14,7 @@ import javax.crypto.SecretKey;
  * @since 11/12/2017
  */
 @SuppressWarnings({"squid:S1118"})
-public class ECBEncryptionDecryptionExample {
+public class ECBModeEncryptionExample {
 
     /**
      * Encrypts data in Electronic Code Book (ECB) mode.

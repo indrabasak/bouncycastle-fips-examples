@@ -7,7 +7,7 @@ import javax.crypto.spec.IvParameterSpec;
 import org.bouncycastle.util.encoders.Hex;
 
 /**
- * {@code CTREncryptionDecryptionExample} contains examples of encrypting and
+ * {@code CTRModeEncryptionExample} contains examples of encrypting and
  * decrypting in CTR (Counter) mode. It is a block streaming mode with more
  * control than CFB (Cipher Feedback) mode. The IV (initialization vector) is
  * broken up into two parts: a random nonce, and a counter.
@@ -21,8 +21,7 @@ import org.bouncycastle.util.encoders.Hex;
  * @since 11/18/2017
  */
 @SuppressWarnings({"squid:S1118"})
-public class CTREncryptionDecryptionExample {
-
+public class CTRModeEncryptionExample {
 
     /**
      * Encrypts data in CTR (Counter) mode.
@@ -37,6 +36,10 @@ public class CTREncryptionDecryptionExample {
     public static byte[][] ctrEncrypt(SecretKey key, byte[] data)
             throws GeneralSecurityException {
         Cipher cipher = Cipher.getInstance("AES/CTR/NoPadding", "BCFIPS");
+
+        // The IV is initialized with 12 bytes for nonce (which in real life
+        // should be random) and 4 bytes for the counter.
+        // This would help to encrypt a message of length 2^32 blocks.
         cipher.init(Cipher.ENCRYPT_MODE, key,
                 new IvParameterSpec(Hex.decode("000102030405060708090a0b")));
         return new byte[][]{cipher.getIV(), cipher.doFinal(data)};

@@ -6,7 +6,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 
 /**
- * {@code CBCEncryptionDecryptionExample} contains examples of encrypting and
+ * {@code CBCModeEncryptionExample} contains examples of encrypting and
  * decrypting in CBC (Cipher Block Chaining) mode. Padding needs to be
  * specified as the CBC mode is block aligned. CBC mode has an extra
  * parameter, the initialization vector (IV), which is used with the mode to
@@ -17,7 +17,7 @@ import javax.crypto.spec.IvParameterSpec;
  * @since 11/18/2017
  */
 @SuppressWarnings({"squid:S1118"})
-public class CBCEncryptionDecryptionExample {
+public class CBCModeEncryptionExample {
 
     /**
      * Encrypts data in CBC (Cipher Block Chaining) mode.

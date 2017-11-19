@@ -11,13 +11,13 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * {@code ECBEncryptionDecryptionExampleTest} contains unit tests
- * related to {@code ECBEncryptionDecryptionExample}.
+ * {@code ECBModeEncryptionExampleTest} contains unit tests
+ * related to {@code ECBModeEncryptionExample}.
  *
  * @author Indra Basak
  * @since 11/12/2017
  */
-public class ECBEncryptionDecryptionExampleTest {
+public class ECBModeEncryptionExampleTest {
 
     @Before
     public void setUp() {
@@ -30,12 +30,12 @@ public class ECBEncryptionDecryptionExampleTest {
         byte[] plaintext = "Indra".getBytes();
 
         byte[] ciphertext =
-                ECBEncryptionDecryptionExample.ecbEncrypt(key,
+                ECBModeEncryptionExample.ecbEncrypt(key,
                         plaintext);
         assertNotNull(ciphertext);
 
         byte[] derivedPlainText =
-                ECBEncryptionDecryptionExample.ecbDecrypt(key,
+                ECBModeEncryptionExample.ecbDecrypt(key,
                         ciphertext);
         assertNotNull(derivedPlainText);
         assertArrayEquals(plaintext, derivedPlainText);

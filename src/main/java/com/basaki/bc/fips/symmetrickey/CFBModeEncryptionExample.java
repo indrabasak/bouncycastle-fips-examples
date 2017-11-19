@@ -6,7 +6,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 
 /**
- * {@code CFBEncryptionDecryptionExample} contains examples of encrypting and
+ * {@code CFBModeEncryptionExample} contains examples of encrypting and
  * decrypting in CFB (Cipher Feedback) mode. It is similar to CBC while
  * using a streaming block mode. However, padding is no longer required
  * as the cipher generates a stream of "noise" which is XOR'd with the data
@@ -16,7 +16,7 @@ import javax.crypto.spec.IvParameterSpec;
  * @since 11/18/2017
  */
 @SuppressWarnings({"squid:S1118"})
-public class CFBEncryptionDecryptionExample {
+public class CFBModeEncryptionExample {
 
     /**
      * Encrypts data in CFB (Cipher Feedback) mode.
