@@ -85,6 +85,8 @@ and TripleDES, and also a number of other symmetric ciphers such as ARC4,
 Blowfish, Camellia, CAST5, DES, GOST28147, IDEA, RC2, SEED, Serpent, 
 SHACAL2, and Twofish.
 
+#### Basic Modes and Padding
+
 - `KeyCreationExample.java` contains examples related to creating symmetric 
 keys. (_Example 4 and 5_)
 
@@ -121,6 +123,19 @@ least 2 blocks of data. It requires no padding, as the “stealing” process
 allows it to produce a cipher text which is the same length as the plain
 text. The most popular one is CS3. (_Example 10_) Encountered the following 
 exception while testing: `javax.crypto.BadPaddingException: Error closing stream`
+
+#### Authenticated Modes
+
+Unlike basic modes, authenticated modes (GCM, CCM) provides a cryptographic 
+checksum that can be used to help validate a decryption. 
+
+These modes are also known as Authenticated Encryption with Associated 
+Data (AEAD) modes since they provide ways to add extra clear text or associated 
+data into the tag used for validation.
+
+- `GCMAuthModeEncryptionExample.java` contains examples of encrypting and
+decrypting in authenticated GCM (Galois/Counter Mode) mode. It is based on
+CTR (Counter) mode and has its own hashing function.
 
 
 ## Build
