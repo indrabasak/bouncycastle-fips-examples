@@ -135,7 +135,7 @@ data into the tag used for validation.
 
 - `GCMAuthModeEncryptionExample.java` contains examples of encrypting and
 decrypting in authenticated GCM (Galois/Counter Mode) mode. It is based on
-CTR (Counter) mode and has its own hashing function.
+CTR (Counter) mode and has its own hashing function. (_Example 11_)
 
 
 ## Build
