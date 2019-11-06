@@ -10,7 +10,7 @@ involved in transmission of sensistive data in US government departments
 and agencies must adhere to FIPS 140-2 standards.
 
 ## Bouncy Castle Provider Configuration
-There are couple of diifferent ways to configure Bouncy Castle FIPS Java provider:
+There are couple of different ways to configure Bouncy Castle FIPS Java provider:
 
 ### JRE Security Changes
 1. Place the `bc-fips-1.0.0.jar` in the `jre/lib/ext` folder.
